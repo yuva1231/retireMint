@@ -1,0 +1,157 @@
+/* aboutStyle.css - RetireMINT About Page */
+
+:root {
+  --bg: #0f172a;
+  --surface: #1e293b;
+  --accent: #10b981;
+  --accent-hover: #059669;
+  --text: #f1f5f9;
+  --text-muted: #94a3b8;
+  --border: #334155;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+/* ── Nav ── */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 60px;
+  background: rgba(15, 23, 42, 0.9);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--accent);
+  letter-spacing: -0.5px;
+}
+
+nav ul { list-style: none; display: flex; gap: 8px; }
+
+nav ul li a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: color 0.2s, background 0.2s;
+}
+
+nav ul li a:hover { color: var(--text); background: var(--surface); }
+
+/* ── Container ── */
+.container {
+  max-width: 860px;
+  margin: 50px auto;
+  padding: 0 40px 80px;
+}
+
+/* ── Intro ── */
+.intro {
+  text-align: center;
+  margin-bottom: 50px;
+  padding: 40px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+}
+
+.intro h1 {
+  font-size: 38px;
+  font-weight: 800;
+  color: var(--accent);
+  letter-spacing: -1px;
+  margin-bottom: 14px;
+}
+
+.intro p {
+  font-size: 18px;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+/* ── Sections ── */
+section {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 28px 32px;
+  margin-bottom: 24px;
+  transition: transform 0.2s;
+}
+
+section:hover { transform: translateY(-2px); }
+
+h2 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 14px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+p {
+  font-size: 15px;
+  color: var(--text-muted);
+  line-height: 1.75;
+  margin-bottom: 12px;
+}
+
+p:last-child { margin-bottom: 0; }
+
+p strong { color: var(--text); }
+
+/* ── Feature list ── */
+.feature-list {
+  margin: 12px 0 16px 20px;
+  list-style: disc;
+}
+
+.feature-list li {
+  font-size: 15px;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 6px;
+}
+
+/* ── Contact ── */
+.contact-section a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.contact-section a:hover { color: var(--accent-hover); text-decoration: underline; }
+
+.tagline {
+  font-style: italic;
+  color: var(--accent) !important;
+  margin-top: 16px;
+  font-size: 15px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  nav { padding: 16px 24px; }
+  .container { padding: 0 20px 60px; margin: 30px auto; }
+  .intro { padding: 28px 20px; }
+  .intro h1 { font-size: 28px; }
+  section { padding: 20px; }
+}

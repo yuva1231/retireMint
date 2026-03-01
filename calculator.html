@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RetireMINT - Retirement Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="calculatorStyle.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="calculatorScript.js"></script>
+</head>
+<body>
+    <nav>
+        <div class="logo">RetireMINT</div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="gettingStarted.html">Guide</a></li>
+            <li><a href="aboutPage.html">About</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="container">
+            <div class="page-header">
+                <h1>Retirement Calculator</h1>
+                <div class="rate-badge" id="rateBadge">
+                    <span class="badge-label">Live Fed Rate (used for projections)</span>
+                    <span class="badge-value" id="headerInterestRate">Loading...</span>
+                </div>
+            </div>
+
+            <div class="calculator-content">
+                <!-- Left: Form -->
+                <div class="calculator-form">
+                    <h2>Your Details</h2>
+                    <form id="retirementForm">
+
+                        <div class="form-section-label">About You</div>
+
+                        <div class="input-group">
+                            <label>Current age <span class="tooltip-icon" data-tooltip="Your age today in whole years.">?</span></label>
+                            <input type="text" id="currentAge" pattern="[0-9]*" inputmode="numeric" placeholder="e.g. 30" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label>Planned retirement age <span class="tooltip-icon" data-tooltip="The age at which you plan to stop working full-time.">?</span></label>
+                            <input type="text" id="retirementAge" pattern="[0-9]*" inputmode="numeric" placeholder="e.g. 65" required>
+                        </div>
+
+                        <div class="form-section-label">Income &amp; Savings</div>
+
+                        <div class="input-group">
+                            <label>Annual household income ($) <span class="tooltip-icon" data-tooltip="Your total yearly income before taxes from all sources.">?</span></label>
+                            <input type="text" id="yearlyIncome" pattern="[0-9,]*" inputmode="numeric" placeholder="e.g. 80,000" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label>Expected annual raise (%) <span class="tooltip-icon" data-tooltip="How much your income typically grows per year. 2-4% is common.">?</span></label>
+                            <input type="text" id="incomeIncrease" pattern="[0-9.]*" inputmode="decimal" placeholder="e.g. 3" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label>Current retirement savings ($) <span class="tooltip-icon" data-tooltip="Total already saved across 401(k), IRA, brokerage accounts, etc.">?</span></label>
+                            <input type="text" id="currentSavings" pattern="[0-9,]*" inputmode="numeric" placeholder="e.g. 15,000" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label>Annual savings rate (%) <span class="tooltip-icon" data-tooltip="Percentage of your income saved for retirement each year. Advisors often recommend 15-20%.">?</span></label>
+                            <input type="text" id="retirementSavingsPercentage" pattern="[0-9.]*" inputmode="decimal" placeholder="e.g. 15" required>
+                        </div>
+
+                        <div class="form-section-label">Retirement Goals</div>
+
+                        <div class="input-group">
+                            <label>Expected annual spending in retirement ($) <span class="tooltip-icon" data-tooltip="Estimated yearly expenses in retirement in today's dollars. Includes housing, healthcare, food, travel, etc.">?</span></label>
+                            <input type="text" id="annualRetirementSpending" pattern="[0-9,]*" inputmode="numeric" placeholder="e.g. 50,000" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label>Years in retirement <span class="tooltip-icon" data-tooltip="How many years you expect to spend in retirement. 25-30 years is a common estimate.">?</span></label>
+                            <input type="text" id="yearsInRetirement" pattern="[0-9]*" inputmode="numeric" placeholder="e.g. 25" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label>Expected annual inflation rate (%) <span class="tooltip-icon" data-tooltip="The rate at which prices will rise each year. The U.S. long-run average is around 2.5-3%.">?</span></label>
+                            <input type="text" id="inflationRate" pattern="[0-9.]*" inputmode="decimal" placeholder="e.g. 2.5" required>
+                        </div>
+
+                        <button type="submit">Calculate My Retirement</button>
+                    </form>
+                </div>
+
+                <!-- Right: Results -->
+                <div class="results-panel" id="resultsPanel">
+                    <div class="results-placeholder">
+                        <h3>Your results will appear here</h3>
+                        <p>Fill in the form and click "Calculate My Retirement" to see your personalized projection.</p>
+                    </div>
+                    <div id="summary"></div>
+                    <div id="chartContainer"></div>
+                    <div class="export-container" id="exportContainer" style="display:none;">
+                        <button id="exportPDF" class="export-button">Export to PDF</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

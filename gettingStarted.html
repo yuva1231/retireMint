@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RetireMINT - Getting Started</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="gettingStartedStyle.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">RetireMINT</div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="calculator.html">Calculator</a></li>
+            <li><a href="aboutPage.html">About</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <section class="intro">
+            <h1>Getting Started</h1>
+            <p>Everything you need to know to get an accurate retirement projection in under 2 minutes.</p>
+        </section>
+
+        <section>
+            <h2>How It Works</h2>
+            <ol>
+                <li>Enter your <strong>current age</strong> and the age you plan to <strong>retire</strong>.</li>
+                <li>Provide your <strong>annual income</strong>, expected <strong>raise rate</strong>, and current <strong>retirement savings</strong>.</li>
+                <li>Set the <strong>percentage of income</strong> you contribute to retirement each year.</li>
+                <li>Specify your <strong>expected annual spending</strong> in retirement (in today's dollars).</li>
+                <li>Enter <strong>how many years</strong> you expect to spend in retirement and the <strong>expected inflation rate</strong>.</li>
+                <li>Hit <strong>Calculate</strong>. RetireMINT runs the numbers and shows your savings trajectory, monthly income projection, and whether you're on track.</li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>What You'll Need</h2>
+            <div class="input-overview">
+                <div class="input-item">
+                    <div>
+                        <h3>Current &amp; Retirement Age</h3>
+                        <p>Your age today and the age you plan to stop working. This determines your accumulation window.</p>
+                    </div>
+                </div>
+                <div class="input-item">
+                    <div>
+                        <h3>Income &amp; Raise Rate</h3>
+                        <p>Your household income before taxes, and the yearly percentage you expect it to grow (2-4% is typical).</p>
+                    </div>
+                </div>
+                <div class="input-item">
+                    <div>
+                        <h3>Current Savings &amp; Contribution Rate</h3>
+                        <p>How much you've already saved for retirement and what percentage of income you'll save each year going forward.</p>
+                    </div>
+                </div>
+                <div class="input-item">
+                    <div>
+                        <h3>Retirement Spending</h3>
+                        <p>Your estimated annual expenses in retirement, in today's dollars. RetireMINT inflation-adjusts this to your retirement date.</p>
+                    </div>
+                </div>
+                <div class="input-item">
+                    <div>
+                        <h3>Years in Retirement</h3>
+                        <p>How long you plan to draw from your savings. 25-30 years is a common estimate for someone retiring at 65.</p>
+                    </div>
+                </div>
+                <div class="input-item">
+                    <div>
+                        <h3>Inflation Rate</h3>
+                        <p>The annual rate at which prices rise. The U.S. long-run average is around 2.5-3%.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Understanding Your Results</h2>
+            <div class="results-explanation">
+                <div class="result-item">
+                    <h3>Projected at Retirement</h3>
+                    <p>The total value of your portfolio on the day you retire, based on your contributions compounding at the live U.S. Treasury rate.</p>
+                </div>
+                <div class="result-item">
+                    <h3>Savings Target</h3>
+                    <p>The nest egg needed to sustain your spending throughout retirement, calculated using the Present Value of a Growing Annuity formula (accounts for inflation and portfolio growth during drawdown).</p>
+                </div>
+                <div class="result-item">
+                    <h3>Monthly Income</h3>
+                    <p>Two views: your target monthly spending in today's dollars, and the sustainable monthly withdrawal suggested by the 4% rule applied to your projected portfolio.</p>
+                </div>
+                <div class="result-item">
+                    <h3>Savings Growth Chart</h3>
+                    <p>A year by year view of your portfolio growing from today to retirement, plotted against your savings target.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <h2>Ready to plan?</h2>
+            <p>Open the calculator and fill in your details, it only takes a minute.</p>
+            <a href="calculator.html" class="cta-button">Open the Calculator</a>
+        </section>
+    </div>
+</body>
+</html>
